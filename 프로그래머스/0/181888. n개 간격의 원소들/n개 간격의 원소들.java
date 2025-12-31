@@ -1,17 +1,12 @@
-import java.util.*;
-
 class Solution {
     public int[] solution(int[] num_list, int n) {
-        ArrayList<Integer> arr = new ArrayList<>();
-        
+        int[] answer = new int[num_list.length%n==0 ? num_list.length/n : num_list.length/n+1];
+        int count = 0;
         for(int i=0; i<num_list.length; i+=n) {
-            arr.add(num_list[i]);
+            answer[count] = num_list[i];
+            count++;
         }
         
-        int[] numlist = new int[arr.size()];
-        for(int i=0; i<numlist.length; i++) {
-            numlist[i] = arr.get(i);
-        }
-        return numlist;
+        return answer;
     }
 }
